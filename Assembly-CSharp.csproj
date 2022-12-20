@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4e127f9b-4e9c-5cec-3f7e-808b899fff5b}</ProjectGuid>
+    <ProjectGuid>{38ca5c4d-727f-5326-e54f-c0fc742e4943}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -44,6 +44,7 @@
      <Compile Include="Assets\Script\HealthBar.cs" />
      <Compile Include="Assets\Script\LoadSceneClick.cs" />
      <Compile Include="Assets\Script\LoadSceneDelay.cs" />
+     <Compile Include="Assets\Script\PauseMenu.cs" />
      <Compile Include="Assets\Script\SoundManager.cs" />
      <Compile Include="Assets\Script\UIdiam.cs" />
      <Compile Include="Assets\Script\Video.cs" />
@@ -648,34 +649,34 @@
         <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.38f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>C:\Users\Hubby\Downloads\Type or Be Hunted Final\Type or Be Hunted\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>D:\github\Type-Or-Be-Hunted\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:\Users\Hubby\Downloads\Type or Be Hunted Final\Type or Be Hunted\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>D:\github\Type-Or-Be-Hunted\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>C:\Users\Hubby\Downloads\Type or Be Hunted Final\Type or Be Hunted\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>D:\github\Type-Or-Be-Hunted\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
-        <HintPath>C:\Users\Hubby\Downloads\Type or Be Hunted Final\Type or Be Hunted\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+        <HintPath>D:\github\Type-Or-Be-Hunted\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>C:\Users\Hubby\Downloads\Type or Be Hunted Final\Type or Be Hunted\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>D:\github\Type-Or-Be-Hunted\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>C:\Users\Hubby\Downloads\Type or Be Hunted Final\Type or Be Hunted\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>D:\github\Type-Or-Be-Hunted\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>C:\Users\Hubby\Downloads\Type or Be Hunted Final\Type or Be Hunted\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>D:\github\Type-Or-Be-Hunted\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>C:\Users\Hubby\Downloads\Type or Be Hunted Final\Type or Be Hunted\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>D:\github\Type-Or-Be-Hunted\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>C:\Users\Hubby\Downloads\Type or Be Hunted Final\Type or Be Hunted\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>D:\github\Type-Or-Be-Hunted\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>C:\Users\Hubby\Downloads\Type or Be Hunted Final\Type or Be Hunted\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>D:\github\Type-Or-Be-Hunted\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

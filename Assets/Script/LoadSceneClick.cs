@@ -26,6 +26,7 @@ public class LoadSceneClick : MonoBehaviour
         //Melakukan perpindahan antar scene. Catatan: Scene yang dipanggil sudah didaftarkan di Build Setting
         SceneManager.LoadScene("2. GameMenu");
         GameData.instance.Score = 0;
+        Time.timeScale = 1;
         
     }
     
