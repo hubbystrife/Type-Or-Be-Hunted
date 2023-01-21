@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class enemymovement : MonoBehaviour
 {
-    [SerializeField] private float knockbackStrength ;
+    //[SerializeField] private float knockbackStrength ;
     [Header("Main Setting")]
     public Animator anim;
     public float lookRadius = 13f;
@@ -15,10 +15,12 @@ public class enemymovement : MonoBehaviour
     [Header("Main Settings")]
     public string TagObject;
     GameManager gameManager;
+    private int damage = 15;
 
     // Start is called before the first frame update
     void Start()
     {
+        Cek();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         enemy = GetComponent<UnityEngine.AI.NavMeshAgent>();
         
@@ -59,19 +61,64 @@ public class enemymovement : MonoBehaviour
         else {
             anim.SetBool("Attack",false);
         }
+        
     }
 
 
 
     void OnCollisionEnter(Collision collision)
     {
-        Rigidbody rb = collision.collider.GetComponent<Rigidbody>();
+        /*Rigidbody rb = collision.collider.GetComponent<Rigidbody>();
+        Vector3 direction=collision.transform.position - transform.position;
+        direction.y = 0;
+        rb.AddForce(direction.normalized*knockbackStrength, ForceMode.Impulse);*/
         if(collision.gameObject.tag == TagObject){
-            gameManager.TakeDamage(30);
-            SoundManager.instance.Hit();
-            /*Vector3 direction=collision.transform.position - transform.position;
-            direction.y = 0;
-            rb.AddForce(direction.normalized*knockbackStrength, ForceMode.Impulse);*/
+            TakeDMG(damage);
+            SoundManager.instance.Hit();          
+        }
+    }
+    private void TakeDMG(int DMG)
+    {
+        gameManager.TakeDamage(DMG);
+    }
+
+    public void Cek()
+    {
+        if( GameData.instance.lvl2easy == true)
+        {
+            damage -= 5;
+        }
+        if( GameData.instance.lvl2Hard == true)
+        {
+            damage += 10;
+        }
+        if( GameData.instance.lvl3easy == true)
+        {
+            damage -= 5;
+        }
+        if( GameData.instance.lvl3Hard == true)
+        {
+            damage += 10;
+        }
+        if( GameData.instance.lvl4easy == true)
+        {
+            damage -= 5;
+        }
+        if( GameData.instance.lvl4Hard == true)
+        {
+            damage += 10;
+        }
+        if( GameData.instance.lvl5easy == true)
+        {
+            damage -= 5;
+        }
+        if( GameData.instance.lvl5Hard == true)
+        {
+            damage += 10;
+        }
+        if ( damage < 10)
+        {
+            damage = 10;
         }
     }
 

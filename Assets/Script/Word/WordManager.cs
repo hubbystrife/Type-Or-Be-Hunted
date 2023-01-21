@@ -11,14 +11,31 @@ public class WordManager : MonoBehaviour
     public WordSpawner wordSpawner;
     private int length;
 
+
     private void Update()
     {
         AddWord();
         if (words.Count == 0)
         {
-            GameData.instance.Score += 100;
+            GameManager.instance.score += 100;
             Destroy(this.tuyul);
-            SoundManager.instance.TuyulDead();
+            if(GameData.instance.soundTuyul == true)
+            {
+                SoundManager.instance.TuyulDead();
+            }
+            if(GameData.instance.soundBabi == true)
+            {
+                SoundManager.instance.BabiDead();
+            }
+            if(GameData.instance.soundKunti == true)
+            {
+                SoundManager.instance.KuntiDead();
+            }
+            if(GameData.instance.soundGenderuwo == true)
+            {
+                SoundManager.instance.GenderuwoDead();
+            }
+            
         }
     }
 
@@ -64,4 +81,5 @@ public class WordManager : MonoBehaviour
             words.Remove(activeWord);
         }
     }
+
 }

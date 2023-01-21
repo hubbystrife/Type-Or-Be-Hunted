@@ -48,6 +48,7 @@
      <Compile Include="Assets\Script\SoundManager.cs" />
      <Compile Include="Assets\Script\UIdiam.cs" />
      <Compile Include="Assets\Script\Video.cs" />
+     <Compile Include="Assets\Script\WinSceneScript.cs" />
      <Compile Include="Assets\Script\Word\Word.cs" />
      <Compile Include="Assets\Script\Word\WordDisplay.cs" />
      <Compile Include="Assets\Script\Word\WordGenerator.cs" />
@@ -60,7 +61,10 @@
      <Compile Include="Assets\Script\fadein.cs" />
      <Compile Include="Assets\Script\menuSelect.cs" />
      <Compile Include="Assets\Script\playerController.cs" />
-     <Compile Include="Assets\Script\spawner.cs" />
+     <Compile Include="Assets\Script\spawner_babi.cs" />
+     <Compile Include="Assets\Script\spawner_genderuwo.cs" />
+     <Compile Include="Assets\Script\spawner_kunti.cs" />
+     <Compile Include="Assets\Script\spawner_tuyul.cs" />
      <Compile Include="Assets\Script\walksound.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

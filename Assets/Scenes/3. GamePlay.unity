@@ -2248,7 +2248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 205.9, y: -35.3}
+  m_AnchoredPosition: {x: 205.8999, y: -35.30005}
   m_SizeDelta: {x: 377.9756, y: 35.32563}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &392449727
@@ -3365,6 +3365,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerr: 600
+  onGoing: 1
+  lvl1isOver: 0
+  lvl2isOver: 0
+  lvl3isOver: 0
+  lvl4isOver: 0
+  lvl5isOver: 0
+  soundTuyul: 1
+  soundKunti: 0
+  soundBabi: 0
+  soundGenderuwo: 0
+  lvl2Hard: 0
+  lvl2easy: 0
+  lvl3Hard: 0
+  lvl3easy: 0
+  lvl4Hard: 0
+  lvl4easy: 0
+  lvl5Hard: 0
+  lvl5easy: 0
+  destroyCamera: 0
+  EnemySpeed: 0
   Score: 0
   enemyy: []
 --- !u!4 &584327919
@@ -3596,9 +3616,10 @@ GameObject:
   - component: {fileID: 712514339}
   - component: {fileID: 712514342}
   - component: {fileID: 712514341}
+  - component: {fileID: 712514340}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3610,13 +3631,28 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712514338}
-  m_LocalRotation: {x: 0.29844666, y: 0.15346141, z: -0.048681997, w: 0.9407493}
-  m_LocalPosition: {x: -10.98425, y: 30.903656, z: -31.886143}
+  m_LocalRotation: {x: 0.17661029, y: 0.77372384, z: -0.24545705, w: 0.55669665}
+  m_LocalPosition: {x: -498.09613, y: 55.703655, z: -17.215746}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2004281205}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &712514340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712514338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b1aa4c72cdbc04794878e09ac42902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 2004281205}
+  SmoothFactor: 0.5
+  LookAtPlayer: 1
 --- !u!81 &712514341
 AudioListener:
   m_ObjectHideFlags: 0
@@ -6235,10 +6271,12 @@ MonoBehaviour:
   currentHealth: 0
   timerTxt: {fileID: 1678970695}
   healthBar: {fileID: 392449727}
-  winCondition: {fileID: 1949257669}
-  loseCondition: {fileID: 308347740}
   scoreTxt: {fileID: 27962676}
   score: 0
+  players: []
+  player: {fileID: 2067771052}
+  MCs: []
+  MC: {fileID: 0}
 --- !u!4 &1310869498
 Transform:
   m_ObjectHideFlags: 0
@@ -7071,6 +7109,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tuyuldead: {fileID: 8300000, guid: 486e432084614524895ce7e4040b208c, type: 3}
   tuyulspawn: {fileID: 8300000, guid: 3fe757e0528fd5e46b5eb5fe4e491bd7, type: 3}
+  kuntidead: {fileID: 8300000, guid: d04822a891e6b9d489fdc4c1ee90f9c7, type: 3}
+  kuntispawn: {fileID: 8300000, guid: f1fc28f568317b147bdad7957a7b0475, type: 3}
+  babidead: {fileID: 8300000, guid: e95548d27b4b57d41ad0ed397c36bc98, type: 3}
+  babispawn: {fileID: 8300000, guid: 42d201f9fa5cc1c499d126c28103113b, type: 3}
+  genderuwodead: {fileID: 8300000, guid: 0f833637aa7b88544ba5c1808f412863, type: 3}
+  genderuwospawn: {fileID: 8300000, guid: 95b98b9d0cbd9b745a7e29beb18d23ee, type: 3}
   typing: {fileID: 8300000, guid: b0f6f56dbb788e44b8300650f75e5140, type: 3}
   hit: {fileID: 8300000, guid: 1451d15e279ef1d42b38c8a26f651ba7, type: 3}
 --- !u!82 &1447170804
@@ -9794,12 +9838,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067771052}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -466.21, y: 24.8, z: -28.2}
+  m_LocalPosition: {x: -466.21, y: 22.5, z: -28.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 583561990}
   - {fileID: 78117002}
-  - {fileID: 712514339}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -10062,6 +10105,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5959b67537a164d8933de31b6fe47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MC: {fileID: 712514338}
+  FallingThreshold: -10
+  Falling: 0
+  TP: {fileID: 2067771053}
+  PS: 15
+  JS: 7
+  Gravity: 10
 --- !u!195 &2067771056
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10080,8 +10130,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
+  m_Height: 0.00001
+  m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!54 &2067771057
@@ -10092,13 +10142,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067771052}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &2067771058
 CapsuleCollider:

@@ -8,6 +8,12 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip tuyuldead;
     public AudioClip tuyulspawn;
+    public AudioClip kuntidead;
+    public AudioClip kuntispawn;
+    public AudioClip babidead;
+    public AudioClip babispawn;
+    public AudioClip genderuwodead;
+    public AudioClip genderuwospawn;
     public AudioClip typing;
     public AudioClip hit;
 
@@ -40,6 +46,36 @@ public class SoundManager : MonoBehaviour
     public void TuyulDead()
     {
         audio.PlayOneShot(tuyuldead);
+    }
+
+    public void KuntiSpawn()
+    {
+        audio.PlayOneShot(kuntispawn);
+    }
+
+    public void KuntiDead()
+    {
+        audio.PlayOneShot(kuntidead);
+    }
+
+    public void GenderuwoSpawn()
+    {
+        audio.PlayOneShot(genderuwospawn);
+    }
+
+    public void GenderuwoDead()
+    {
+        audio.PlayOneShot(genderuwodead);
+    }
+
+    public void BabiSpawn()
+    {
+        audio.PlayOneShot(babispawn);
+    }
+
+    public void BabiDead()
+    {
+        audio.PlayOneShot(babidead);
     }
 
     public void Typing()

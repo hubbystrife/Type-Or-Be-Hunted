@@ -14,9 +14,21 @@ public class cameraCintrillir : MonoBehaviour
 
     public bool LookAtPlayer = false;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
         _cameraOffset = transform.position - playerTransform.position;
+    }
+
+    void update ()
+    {
+        if (GameData.instance.destroyCamera == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void LateUpdate()

@@ -2,20 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour
 {
     Rigidbody rb;
     private Animator animator;
+    public GameObject MC;
     private NavMeshAgent navMeshAgent;
+    public float FallingThreshold = -10f;  //Adjust in inspector to appropriate value for the speed you want to trigger detecting a fall, probably by just testing
+    [HideInInspector]
+    public bool Falling = false;  //Other scripts can check this value to see if currently falling
+ 
     
     private bool running = false;
 
-    /*public CharacterController TP;
+    public CharacterController TP;
     Vector3 moveDirection;
     public float PS;
     public float JS;
-    public float Gravity;*/
+    public float Gravity;
+    GameManager gameManager;
 
     private void Start()
     {
@@ -26,39 +33,38 @@ public class playerController : MonoBehaviour
 
     private void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        RaycastHit hit;
 
-        if (Input.GetMouseButtonDown(0))
+        if (rb.velocity.y < FallingThreshold)
         {
-            if(Physics.Raycast(ray, out hit, 500))
-            {
-                navMeshAgent.destination = hit.point;
-            }
-        }
-
-        if(navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
-        {
-            running = false;
-            walksound.instance.StopWalk();
+            Falling = true;
         }
         else
         {
-            running = true;
-            walksound.instance.Walk();
+            Falling = false;
+        }
+ 
+        if (Falling)
+        {
+            SceneManager.LoadScene("Lose Scene");
+            Destroy(MC);
+            Destroy(gameObject);
         }
 
-        animator.SetBool("run", running);
-
-        /*if(TP.isGrounded)
+        if (TP.isGrounded)
         {
             moveDirection = new Vector3(Input.GetAxis("Vertical"),0,Input.GetAxis("Horizontal"));
             moveDirection *= PS;
+
             if(Input.GetButton("Jump") ) 
             {
                 moveDirection.y=JS;
             }
+        }
+
+        if ( TP.transform.position.y <= 2)
+        {
+            gameManager.TakeDamage(30);
         }
 
         moveDirection.y -= Gravity*Time.deltaTime;
@@ -89,7 +95,7 @@ public class playerController : MonoBehaviour
         {
             running = false;
         }
-        animator.SetBool("run", running);*/
+        animator.SetBool("run", running);
         
     }
 
