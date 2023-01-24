@@ -29,7 +29,8 @@ public class enemymovement : MonoBehaviour
         {
             Debug.Log("No game objects are tagged with 'Player'");
         }
-        else{
+        else
+        {
             Debug.Log("Game Object Name =" + gameObjects[0]);
             player = gameObjects[0];
         }
@@ -38,7 +39,6 @@ public class enemymovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         float distance = Vector3.Distance(player.transform.position, transform.position);
         Vector3 temp = player.transform.position;
         if (distance <= lookRadius)
@@ -46,11 +46,12 @@ public class enemymovement : MonoBehaviour
             temp.y =  transform.position.y;
             transform.LookAt(temp);
             enemy.SetDestination(player.transform.position);
-            if (temp != Vector3.zero  )
+            if (temp != Vector3.zero)
             {
                 anim.SetBool("Seek",true);
             }
-            else {
+            else 
+            {
                 anim.SetBool("Seek",false);
             }
         }
