@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8490273738600421535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8490273738600421533}
+  - component: {fileID: 8490273738600421534}
+  - component: {fileID: 8490273738600421531}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8490273738600421533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8490273738600421535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 224.32457, y: 904.5556, z: -49.08293}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8490273738600421534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8490273738600421535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c2930a15cf5634ab60e3c4be0f6048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  isOver: 0
+  maxHealth: 100
+  currentHealth: 0
+  timerTxt: {fileID: 0}
+  healthBar: {fileID: 0}
+  scoreTxt: {fileID: 0}
+  score: 0
+  players: []
+  player: {fileID: 0}
+  MCs: []
+  MC: {fileID: 0}
+--- !u!114 &8490273738600421531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8490273738600421535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744e59bf17c2a0e4e9750be60da78368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kadalWords:
+  - nun
+  - veil
+  - mean
+  - plain
+  - girl
+  - light
+  - trial
+  - youth
+  - sale
+  - user
+  - talk
+  - cheap
+  - favor
+  - glory
+  - ate
+  - tight
+  - sick
+  - rage
+  - coast
+  - bar
+  - wind
+  - blow
+  - match
+  - hip
+  - hero
+  - bake
+  - thigh
+  - job
+  - cook
+  - faint
+  - tower
+  - cup
+  - thin
+  - feel
+  - story
+  - rob
+  - beam
+  - sin
+  - poor
+  - skip
+  - grant
+  - dome
+  - blank
+  - firm
+  - taste
+  - class
+  - loan
+  - seed
+  - trust
+  - twin
+  kadalPrefab:
+  - {fileID: 8694780463501006171, guid: 9d754211a7744f347957de592f664721, type: 3}
+  totalKadal: 21

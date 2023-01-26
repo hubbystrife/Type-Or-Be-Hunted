@@ -16,6 +16,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip genderuwospawn;
     public AudioClip typing;
     public AudioClip hit;
+    public AudioClip soundWrong;
 
     private AudioSource audio;
 
@@ -86,6 +87,10 @@ public class SoundManager : MonoBehaviour
     public void Hit()
     {
         audio.PlayOneShot(hit);
+    }
+    public void WrongAnswer()
+    {
+        audio.PlayOneShot(soundWrong);
     }
 
     

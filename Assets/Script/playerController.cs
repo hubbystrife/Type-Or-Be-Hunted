@@ -8,6 +8,7 @@ public class playerController : MonoBehaviour
 {
     Rigidbody rb;
     private Animator animator;
+    public GameObject[] MCs;
     public GameObject MC;
     private NavMeshAgent navMeshAgent;
     public float FallingThreshold = -10f;  //Adjust in inspector to appropriate value for the speed you want to trigger detecting a fall, probably by just testing
@@ -26,6 +27,8 @@ public class playerController : MonoBehaviour
 
     private void Start()
     {
+        MCs = GameObject.FindGameObjectsWithTag("Camera");
+        MC = MCs[0];
         rb= GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -46,6 +49,7 @@ public class playerController : MonoBehaviour
  
         if (Falling)
         {
+            GameData.instance.Score += GameManager.instance.score;
             SceneManager.LoadScene("Lose Scene");
             Destroy(MC);
             Destroy(gameObject);

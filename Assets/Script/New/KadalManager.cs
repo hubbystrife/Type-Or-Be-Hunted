@@ -31,16 +31,48 @@ namespace Kadal.Word.Manager
             SpawningObject.GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>().text = kadalWords[RandomWords];
             kadalWords.Remove(kadalWords[RandomWords]);
             enemyDal.Add(SpawningObject);
+            if(GameData.instance.soundTuyul == true)
+            {
+                SoundManager.instance.TuyulSpawn();
+            }
+            if(GameData.instance.soundBabi == true)
+            {
+                SoundManager.instance.BabiSpawn();
+            }
+            if(GameData.instance.soundKunti == true)
+            {
+                SoundManager.instance.KuntiSpawn();
+            }
+            if(GameData.instance.soundGenderuwo == true)
+            {
+                SoundManager.instance.GenderuwoSpawn();
+            }
         }
         static public bool DieTarget(GameObject daler)
         {
             if (daler.GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>().text.Length == 1)
             {
+                if(GameData.instance.soundTuyul == true)
+                {
+                    SoundManager.instance.TuyulDead();
+                }
+                if(GameData.instance.soundBabi == true)
+                {
+                    SoundManager.instance.BabiDead();
+                }
+                if(GameData.instance.soundKunti == true)
+                {
+                    SoundManager.instance.KuntiDead();
+                }
+                if(GameData.instance.soundGenderuwo == true)
+                {
+                    SoundManager.instance.GenderuwoDead();
+                }
                 Destroy(daler);
                 enemyDal.Remove(daler);
                 GameManager.instance.score += 100;
                 return true;
-            }
+            }   
             daler.GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>().text = daler.GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>().text.Substring(1);
             return false;
         }
