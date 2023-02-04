@@ -14,7 +14,8 @@ public class playerController : MonoBehaviour
     public float FallingThreshold = -10f;  //Adjust in inspector to appropriate value for the speed you want to trigger detecting a fall, probably by just testing
     [HideInInspector]
     public bool Falling = false;  //Other scripts can check this value to see if currently falling
- 
+
+    bool knockback = false;
     
     private bool running = false;
 
@@ -102,9 +103,25 @@ public class playerController : MonoBehaviour
         animator.SetBool("run", running);
         
     }
+    private void FixedUpdate()
+    {
+        if (knockback)
+        {
+            transform.position -= transform.forward * Time.deltaTime * 10;
+        }
+    }
+    IEnumerator Knockback()
+    {
+        knockback = true;
+        yield return new WaitForSecondsRealtime(0.3f);
+        knockback = false;
+    }
 
     private void OnTriggerEnter(Collider hit)
     {
-        
+        if (hit.gameObject.CompareTag("Hitbox"))
+        {
+            StartCoroutine(Knockback());
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Kadal.Controller;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -23,7 +24,7 @@ public class enemymovement : MonoBehaviour
         Cek();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         enemy = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        
+
         gameObjects = GameObject.FindGameObjectsWithTag("Player");
         if (gameObjects.Length == 0)
         {
@@ -43,26 +44,26 @@ public class enemymovement : MonoBehaviour
         Vector3 temp = player.transform.position;
         if (distance <= lookRadius)
         {
-            temp.y =  transform.position.y;
+            temp.y = transform.position.y;
             transform.LookAt(temp);
             enemy.SetDestination(player.transform.position);
             if (temp != Vector3.zero)
             {
-                anim.SetBool("Seek",true);
+                anim.SetBool("Seek", true);
             }
-            else 
+            else
             {
-                anim.SetBool("Seek",false);
+                anim.SetBool("Seek", false);
             }
         }
         if (distance <= 5f)
         {
-            anim.SetBool("Attack",true);
+            anim.SetBool("Attack", true);
         }
         else {
-            anim.SetBool("Attack",false);
+            anim.SetBool("Attack", false);
         }
-        
+
     }
 
 
@@ -73,9 +74,9 @@ public class enemymovement : MonoBehaviour
         Vector3 direction=collision.transform.position - transform.position;
         direction.y = 0;
         rb.AddForce(direction.normalized*knockbackStrength, ForceMode.Impulse);*/
-        if(collision.gameObject.tag == TagObject){
+        if (collision.gameObject.tag == TagObject) {
             TakeDMG(damage);
-            SoundManager.instance.Hit();          
+            SoundManager.instance.Hit();
         }
     }
     private void TakeDMG(int DMG)
@@ -85,49 +86,42 @@ public class enemymovement : MonoBehaviour
 
     public void Cek()
     {
-        if( GameData.instance.lvl2easy == true)
+        if (GameData.instance.lvl2easy == true)
         {
             damage -= 5;
         }
-        if( GameData.instance.lvl2Hard == true)
+        if (GameData.instance.lvl2Hard == true)
         {
             damage += 10;
         }
-        if( GameData.instance.lvl3easy == true)
+        if (GameData.instance.lvl3easy == true)
         {
             damage -= 5;
         }
-        if( GameData.instance.lvl3Hard == true)
+        if (GameData.instance.lvl3Hard == true)
         {
             damage += 10;
         }
-        if( GameData.instance.lvl4easy == true)
+        if (GameData.instance.lvl4easy == true)
         {
             damage -= 5;
         }
-        if( GameData.instance.lvl4Hard == true)
+        if (GameData.instance.lvl4Hard == true)
         {
             damage += 10;
         }
-        if( GameData.instance.lvl5easy == true)
+        if (GameData.instance.lvl5easy == true)
         {
             damage -= 5;
         }
-        if( GameData.instance.lvl5Hard == true)
+        if (GameData.instance.lvl5Hard == true)
         {
             damage += 10;
         }
-        if ( damage < 10)
+        if (damage < 10)
         {
             damage = 10;
         }
     }
 
-    /*private void OnTriggerEnter(Collider hit)
-    {
-        if (hit.tag == "Player")
-        {
-            hit.GetComponent<HealthBar>().TakeDamage(5);
-        }
-    }*/
 }
